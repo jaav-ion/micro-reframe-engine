@@ -139,3 +139,4 @@ const styles = {
     lineHeight: 1.5,
   },
 };
+export default ReframeForm;
