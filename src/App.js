@@ -1,9 +1,11 @@
-import { Analytics } from '@vercel/analytics/react';
+// src/App.js
+
 import React from 'react';
+import { Analytics } from '@vercel/analytics/react';
 import ReframeForm from './ReframeForm';
 import './App.css';
 
-function App() {
+export default function App() {
   return (
     <div className="app-wrapper">
       <div className="background-blur" />
@@ -14,5 +16,3 @@ function App() {
     </div>
   );
 }
-
-export default App;

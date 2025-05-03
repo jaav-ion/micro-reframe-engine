@@ -1,25 +1,28 @@
 /* src/App.css */
 
-/* Full-page blurred background */
-body {
-  margin: 0;
-  padding: 0;
-  width: 100%;
-  min-height: 100vh;
-  background: url('/bg-calm-v2.jpg') no-repeat center center fixed;
-  background-size: cover;
-  filter: brightness(95%) blur(2px);
-  overflow: hidden;
-}
-
-/* Wrapper for layering content over the blurred background */
+/* Full-page wrapper (no background here) */
 .app-wrapper {
   position: relative;
   width: 100%;
   min-height: 100vh;
+  overflow: hidden;
 }
 
-/* Main UI container on top of the blurred background */
+/* Blurred background layer */
+/* (bg-calm-v2.jpg must live in src/ alongside App.css) */
+.background-blur {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('./bg-calm-v2.jpg') no-repeat center center fixed;
+  background-size: cover;
+  filter: brightness(95%) blur(2px);
+  z-index: 0;
+}
+
+/* Main UI content container */
 .main-container {
   position: relative;
   z-index: 1;
@@ -31,7 +34,7 @@ body {
   box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
 }
 
-/* Optional link styling */
+/* Links */
 a {
   color: #3366cc;
   text-decoration: none;
