@@ -2,13 +2,25 @@
 import { Analytics } from '@vercel/analytics/react';
 import React from 'react';
 import ReframeForm from './ReframeForm';
-import './App.css'; // make sure this is imported to apply styles
+import './App.css';
 
 function App() {
+  const bgStyle = {
+    backgroundImage: `url(${process.env.PUBLIC_URL + '/bg-calm.jpg'})`,
+    backgroundSize: 'cover',
+    backgroundPosition: 'center',
+    backgroundAttachment: 'fixed',
+    filter: 'brightness(95%) blur(2px)',
+    minHeight: '100vh',
+    width: '100%',
+  };
+
   return (
-    <div className="main-container">
-      <ReframeForm />
-      <Analytics />
+    <div style={bgStyle}>
+      <div className="main-container">
+        <ReframeForm />
+        <Analytics />
+      </div>
     </div>
   );
 }
