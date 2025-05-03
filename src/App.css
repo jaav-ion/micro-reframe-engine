@@ -1,4 +1,4 @@
-/* App wrapper to hold background + content */
+/* Outer wrapper to position background and content */
 .app-wrapper {
   position: relative;
   min-height: 100vh;
@@ -6,20 +6,20 @@
   overflow: hidden;
 }
 
-/* Blurred background layer only */
+/* Blurred background image, fixed behind content */
 .background-blur {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: url('/bg-calm.jpg') no-repeat center center fixed;
+  background: url('/bg-calm-v2.jpg') no-repeat center center fixed;
   background-size: cover;
   filter: brightness(95%) blur(2px);
   z-index: 0;
 }
 
-/* Main UI container on top of blurred background */
+/* Main UI content container */
 .main-container {
   position: relative;
   z-index: 1;
