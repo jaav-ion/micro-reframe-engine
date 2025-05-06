@@ -71,12 +71,27 @@ function ReframeForm() {
           ))}
         </div>
       )}
+
       <p style={{ marginTop: '2rem', fontSize: '0.85rem', color: '#666', textAlign: 'center' }}>
-  This tool is not a substitute for professional mental health care. If you're in crisis or need urgent help, please contact a licensed therapist, medical professional, or emergency support line.
-</p>
-<p style={{ fontSize: '0.8rem', color: '#888', textAlign: 'center', marginTop: '0.5rem' }}>
-  If you're in the U.S., you can text HOME to 741741 for free, 24/7 support from the Crisis Text Line.
-</p>
+        This tool is not a substitute for professional mental health care. If you're in crisis or need urgent help, please contact a licensed therapist, medical professional, or emergency support line.
+      </p>
+      <p style={{ fontSize: '0.8rem', color: '#888', textAlign: 'center', marginTop: '0.5rem' }}>
+        If you're in the U.S., you can text HOME to 741741 for free, 24/7 support from the Crisis Text Line.
+      </p>
+
+      {/* —————————————————————————— */}
+      {/* Book preorder link (Gumroad) */}
+      <p style={{ marginTop: '2rem', fontSize: '0.9rem', textAlign: 'center' }}>
+        Preorder the book:&nbsp;
+        <a
+          href="https://defemberproductions.gumroad.com/l/brutallyalive"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Brutally Alive
+        </a>
+      </p>
+      {/* —————————————————————————— */}
     </div>
   );
 }
@@ -145,4 +160,5 @@ const styles = {
     lineHeight: 1.5,
   },
 };
+
 export default ReframeForm;
