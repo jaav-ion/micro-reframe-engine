@@ -85,22 +85,30 @@ function ReframeForm() {
 
       {/* ==== MARKETING BLOCK ==== */}
       <p style={styles.marketingText}>
-        Def Ember Productions presents <em>Brutally Alive</em> —  
-        a tactical field guide to reclaiming your mind after burnout, trauma, and overwhelm.
+        This isn’t just a tool — it’s a preview of what’s in <em>Brutally Alive</em>,  
+        our upcoming guide to short-circuiting spirals, grounding your mind,  
+        and taking micro-steps toward clarity.
       </p>
-      <p style={styles.marketingLink}>
-        Preorder now at:&nbsp;
+      <p style={{ ...styles.marketingLink, marginBottom: '1rem' }}>
+        Preorder it here:&nbsp;
         <a
           href="https://defemberproductions.gumroad.com/l/brutallyalive"
           target="_blank"
           rel="noopener noreferrer"
+          style={{ fontWeight: '600', color: '#2f80ed' }}
         >
-          defemberproductions.gumroad.com/l/brutallyalive
+          Brutally Alive on Gumroad
         </a>
       </p>
 
-      {/* ==== ROTATING AFFILIATE LINK ==== */}
+      {/* ==== ROTATING AFFILIATE LINK (with disclaimer) ==== */}
+      <p style={{ fontSize: '0.85rem', textAlign: 'center', color: '#555', marginBottom: '0.25rem' }}>
+        Plus, check out one of our trusted resources:
+      </p>
       <AffiliateLink />
+      <p style={{ fontSize: '0.75rem', textAlign: 'center', color: '#888', marginTop: '0.25rem' }}>
+        (These are affiliate links — at no extra cost to you, we earn a small commission if you purchase.)
+      </p>
 
       {/* ==== CONTACT / FEEDBACK FORM ==== */}
       <FeedbackForm />
@@ -186,14 +194,10 @@ const styles = {
   responseLine: { marginBottom: '0.75rem', lineHeight: 1.5 },
   disclaimer: { marginTop: '2rem', fontSize: '0.85rem', color: '#666', textAlign: 'center' },
   crisisLine: { fontSize: '0.8rem', color: '#888', textAlign: 'center', marginTop: '0.5rem' },
-  
   divider: { margin: '3rem 0', border: 'none', height: '1px', background: '#eee' },
-
   marketingText: { fontSize: '0.9rem', textAlign: 'center', color: '#444' },
-  marketingLink: { fontSize: '0.9rem', textAlign: 'center', marginTop: '0.25rem' },
-
+  marketingLink: { fontSize: '0.9rem', textAlign: 'center' },
   affiliate: { fontSize: '0.85rem', textAlign: 'center', marginTop: '1rem', color: '#555' },
-
   feedbackForm: { marginTop: '2rem', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '0.75rem' },
   feedbackHeading: { marginBottom: '0.5rem' },
   feedbackInput: { width: '100%', padding: '0.5rem', borderRadius: '6px', border: '1px solid #ccc' },
