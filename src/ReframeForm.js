@@ -80,15 +80,25 @@ function ReframeForm() {
       </p>
 
       {/* —————————————————————————— */}
-      {/* Book preorder link (Gumroad) */}
-      <p style={{ marginTop: '2rem', fontSize: '0.9rem', textAlign: 'center' }}>
-        Preorder the book:&nbsp;
+      {/* Book preorder link with context (Def Ember Productions voice) */}
+      <p style={{
+          marginTop: '2rem',
+          fontSize: '0.9rem',
+          textAlign: 'center',
+          color: '#444'
+        }}>
+        Def Ember Productions presents <em>Brutally Alive</em> —  
+        a tactical field guide to reclaiming your mind after burnout, trauma, and overwhelm.  
+      </p>
+      <p style={{ fontSize: '0.9rem', textAlign: 'center' }}>
+        Preorder now at:&nbsp;
         <a
           href="https://defemberproductions.gumroad.com/l/brutallyalive"
           target="_blank"
           rel="noopener noreferrer"
+          style={{ fontWeight: '600', color: '#2f80ed' }}
         >
-          Brutally Alive
+          defemberproductions.gumroad.com/l/brutallyalive
         </a>
       </p>
       {/* —————————————————————————— */}
