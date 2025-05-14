@@ -162,4 +162,25 @@ const styles = {
     fontFamily: 'system-ui, sans-serif',
     color: '#222',
     background: '#fff',
-    borderRadius: '8px
+    borderRadius: '8px',
+  },
+  heading: { fontSize: '2rem', textAlign: 'center', marginBottom: '0.5rem' },
+  subheading: { fontSize: '1rem', textAlign: 'center', marginBottom: '2rem', color: '#666' },
+  form: { display: 'flex', flexDirection: 'column', gap: '1.5rem' },
+  label: { fontSize: '1rem', fontWeight: 500, color: '#333', display: 'flex', flexDirection: 'column', gap: '0.5rem' },
+  textarea: { padding: '0.75rem', fontSize: '1rem', border: '1px solid #ccc', borderRadius: '8px', resize: 'vertical' },
+  button: { padding: '0.75rem 1.25rem', fontSize: '1rem', fontWeight: 600, color: '#fff', backgroundColor: '#2f80ed', border: 'none', borderRadius: '8px', cursor: 'pointer' },
+  responseBox: { backgroundColor: '#f9f9f9', border: '1px solid #eee', padding: '1.5rem', borderRadius: '12px', marginTop: '2rem' },
+  responseHeading: { marginBottom: '1rem' },
+  responseLine: { marginBottom: '0.75rem', lineHeight: 1.5 },
+  disclaimer: { marginTop: '2rem', fontSize: '0.85rem', color: '#666', textAlign: 'center' },
+  crisisLine: { fontSize: '0.8rem', color: '#888', textAlign: 'center', marginTop: '0.5rem' },
+  divider: { margin: '3rem 0', border: 'none', height: '1px', background: '#eee' },
+  affiliate: { fontSize: '0.85rem', textAlign: 'center', marginTop: '1rem', color: '#555' },
+  feedbackForm: { marginTop: '2rem', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '0.75rem' },
+  feedbackHeading: { marginBottom: '0.5rem' },
+  feedbackInput: { width: '100%', padding: '0.5rem', borderRadius: '6px', border: '1px solid #ccc' },
+  feedbackTextarea: { width: '100%', padding: '0.5rem', borderRadius: '6px', border: '1px solid #ccc', resize: 'vertical' },
+}
+
+export default ReframeForm
