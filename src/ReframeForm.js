@@ -25,7 +25,7 @@ function ReframeForm() {
 
       <form onSubmit={handleSubmit} style={styles.form}>
         <label style={styles.label}>
-          What’s happening around you?
+          What’s happening right now?
           <textarea
             style={styles.textarea}
             rows="3"
