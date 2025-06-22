@@ -1,5 +1,5 @@
 // src/ReframeForm.js
-import React, { useState } from 'react'
+import React, { useState, useMemo } from 'react'
 import { getReframe } from './api'
 
 function ReframeForm() {
@@ -19,7 +19,6 @@ function ReframeForm() {
 
   return (
     <div style={styles.container}>
-      {/* TOOL UI */}
       <h1 style={styles.heading}>Micro Reframe Engine</h1>
       <p style={styles.subheading}>Shift your inner dialogue in 10 seconds or less.</p>
 
@@ -73,7 +72,6 @@ function ReframeForm() {
         </div>
       )}
 
-      {/* DISCLAIMER */}
       <p style={styles.disclaimer}>
         This tool is not a substitute for professional mental health care. If you're in crisis or need urgent help, please contact a licensed therapist, medical professional, or emergency support line.
       </p>
@@ -83,7 +81,6 @@ function ReframeForm() {
 
       <hr style={styles.divider} />
 
-      {/* AFFILIATE + FEEDBACK (unchanged) */}
       <p style={styles.affiliateIntro}>
         Plus, check out one of our trusted resources:
       </p>
@@ -97,13 +94,15 @@ function ReframeForm() {
   )
 }
 
-/** Rotating affiliate link **/
+/** Rotating affiliate link (shuffled once per session) **/
 function AffiliateLink() {
-  const options = [
+  const options = useMemo(() => [
     { text: 'Try Online-Therapy (sponsor)', url: 'https://onlinetherapy.go2cloud.org/aff_c?offer_id=2&aff_id=4939' },
-    { text: 'Read The Stress-Proof Brain',     url: 'https://amzn.to/4mb4xy3' },
-  ]
-  const { text, url } = options[Math.floor(Math.random() * options.length)]
+    { text: 'Read The Stress-Proof Brain', url: 'https://amzn.to/4mb4xy3' },
+  ].sort(() => Math.random() - 0.5), []) // Shuffle once per session
+
+  const { text, url } = options[0]
+
   return (
     <p style={styles.affiliate}>
       <a href={url} target="_blank" rel="noopener noreferrer">{text}</a>
@@ -146,26 +145,26 @@ function FeedbackForm() {
 }
 
 const styles = {
-  container:     { maxWidth: 720, margin: '3rem auto', padding: '2rem', background: '#fff', borderRadius: 8, fontFamily: 'system-ui' },
-  heading:       { fontSize: '2rem', textAlign: 'center', marginBottom: '.5rem' },
-  subheading:    { fontSize: '1rem', textAlign: 'center', marginBottom: '2rem', color: '#666' },
-  form:          { display: 'flex', flexDirection: 'column', gap: '1.5rem' },
-  label:         { display: 'flex', flexDirection: 'column', gap: '.5rem', fontSize: '1rem', color: '#333' },
-  textarea:      { padding: '.75rem', fontSize: '1rem', border: '1px solid #ccc', borderRadius: 8, resize: 'vertical' },
-  button:        { padding: '.75rem 1.25rem', fontSize: '1rem', fontWeight: 600, color: '#fff', background: '#2f80ed', border: 'none', borderRadius: 8, cursor: 'pointer' },
-  responseBox:   { marginTop: '2rem', padding: '1.5rem', background: '#f9f9f9', borderRadius: 12, border: '1px solid #eee' },
-  responseHeading:{ marginBottom: '1rem' },
-  responseLine:  { marginBottom: '.75rem', lineHeight: 1.5 },
-  disclaimer:    { marginTop: '2rem', fontSize: '.85rem', textAlign: 'center', color: '#666' },
-  crisisLine:    { marginTop: '.5rem', fontSize: '.8rem', textAlign: 'center', color: '#888' },
-  divider:       { margin: '3rem 0', border: 0, height: 1, background: '#eee' },
-  affiliateIntro:{ fontSize: '.85rem', textAlign: 'center', color: '#555' },
-  affiliate:     { fontSize: '.85rem', textAlign: 'center', margin: '0.5rem 0' },
-  affiliateDisclaimer:{ fontSize: '.75rem', textAlign: 'center', color: '#888' },
-  feedbackForm:  { marginTop: '2rem', display: 'flex', flexDirection: 'column', gap: '.75rem' },
-  feedbackHeading:{ textAlign: 'center', margin: 0 },
+  container: { maxWidth: 720, margin: '3rem auto', padding: '2rem', background: '#fff', borderRadius: 8, fontFamily: 'system-ui' },
+  heading: { fontSize: '2rem', textAlign: 'center', marginBottom: '.5rem' },
+  subheading: { fontSize: '1rem', textAlign: 'center', marginBottom: '2rem', color: '#666' },
+  form: { display: 'flex', flexDirection: 'column', gap: '1.5rem' },
+  label: { display: 'flex', flexDirection: 'column', gap: '.5rem', fontSize: '1rem', color: '#333' },
+  textarea: { padding: '.75rem', fontSize: '1rem', border: '1px solid #ccc', borderRadius: 8, resize: 'vertical' },
+  button: { padding: '.75rem 1.25rem', fontSize: '1rem', fontWeight: 600, color: '#fff', background: '#2f80ed', border: 'none', borderRadius: 8, cursor: 'pointer' },
+  responseBox: { marginTop: '2rem', padding: '1.5rem', background: '#f9f9f9', borderRadius: 12, border: '1px solid #eee' },
+  responseHeading: { marginBottom: '1rem' },
+  responseLine: { marginBottom: '.75rem', lineHeight: 1.5 },
+  disclaimer: { marginTop: '2rem', fontSize: '.85rem', textAlign: 'center', color: '#666' },
+  crisisLine: { marginTop: '.5rem', fontSize: '.8rem', textAlign: 'center', color: '#888' },
+  divider: { margin: '3rem 0', border: 0, height: 1, background: '#eee' },
+  affiliateIntro: { fontSize: '.85rem', textAlign: 'center', color: '#555' },
+  affiliate: { fontSize: '.85rem', textAlign: 'center', margin: '0.5rem 0' },
+  affiliateDisclaimer: { fontSize: '.75rem', textAlign: 'center', color: '#888' },
+  feedbackForm: { marginTop: '2rem', display: 'flex', flexDirection: 'column', gap: '.75rem' },
+  feedbackHeading: { textAlign: 'center', margin: 0 },
   feedbackInput: { padding: '.5rem', borderRadius: 6, border: '1px solid #ccc', width: '100%' },
-  feedbackTextarea:{ padding: '.5rem', borderRadius: 6, border: '1px solid #ccc', resize: 'vertical', width: '100%' },
+  feedbackTextarea: { padding: '.5rem', borderRadius: 6, border: '1px solid #ccc', resize: 'vertical', width: '100%' },
 }
 
 export default ReframeForm
